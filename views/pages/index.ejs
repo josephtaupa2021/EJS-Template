@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head'); %>
 </head>
+
 <body class="container">
+    <center>
+        <main>
+            <div>
+                <h1>User Data</h1>
+                <table style="width:50%">
+                    <tr>
+                        <td>NAME</td>
+                        <td>AGE</td>
+                        <td>HOBBIES</td>
+                    </tr>
+                    <% data.forEach(function(data) { %>
+                        <tr>
+                            <td>
+                                <%= data.name %>
+                            </td>
+                            <td>
+                                <%= data.age %>
+                            </td>
+                            <td>
+                                <%= data.hobbies %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </table>
+            </div>
+        </main>
 
-    <header>
-        <%- include('../partials/header'); %>
-    </header>
-
-    <main>
-        <div class="jumbotron">
-            <h1>Top Mascots</h1>
-            <p><%= tagline %></p>
-            <ul>
-                <% mascots.forEach(function(mascot) { %>
-                    <li>
-                        <strong><%= mascot.name %></strong>
-                        representing <%= mascot.organization %>, born <%= mascot.birth_year %>
-                    </li>
-                <% }); %>
-            </ul>
-        </div>
-    </main>
-
-    <footer>
-        <%- include('../partials/footer'); %>
-    </footer>
-
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </center>
 </body>
+
 </html>
